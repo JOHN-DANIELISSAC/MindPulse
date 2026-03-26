@@ -1,0 +1,130 @@
+/* src/index.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ── Google Fonts already loaded via index.html ── */
+
+@layer base {
+  *, *::before, *::after {
+    box-sizing: border-box;
+  }
+
+  html {
+    -webkit-tap-highlight-color: transparent;
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply font-sans text-gray-800 bg-surface antialiased;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-purple-200 rounded-full;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-primary-400;
+  }
+
+  ::selection {
+    @apply bg-primary-200 text-primary-900;
+  }
+}
+
+@layer components {
+  /* Reusable card base */
+  .card {
+    @apply bg-white rounded-2xl shadow-card border border-purple-50 p-5;
+  }
+
+  /* Gradient text utility */
+  .gradient-text {
+    @apply bg-gradient-to-r from-primary-600 to-accent bg-clip-text text-transparent;
+  }
+
+  /* Purple pill badge */
+  .badge-purple {
+    @apply text-xs font-bold px-2.5 py-0.5 rounded-full bg-purple-100 text-primary-700;
+  }
+
+  /* Focus ring override for inputs */
+  .input-base {
+    @apply w-full px-4 py-3 rounded-xl border border-gray-200 text-sm outline-none transition-all duration-200
+           focus:border-primary-500 focus:ring-2 focus:ring-primary-100;
+  }
+
+  /* Primary gradient button */
+  .btn-primary {
+    @apply flex items-center justify-center gap-2 py-3.5 px-6 rounded-xl
+           bg-gradient-to-r from-primary-600 to-accent text-white font-bold text-sm
+           shadow-md hover:opacity-95 active:scale-[0.98] transition-all duration-200;
+  }
+}
+
+@layer utilities {
+  /* Smooth fade-in for page content */
+  .animate-fade-in {
+    animation: fadeIn 0.4s ease-out both;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  /* Soft pulse for loading decorations */
+  .animate-pulse-soft {
+    animation: pulseSoft 2s cubic-bezier(0.4,0,0.6,1) infinite;
+  }
+
+  @keyframes pulseSoft {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.6; }
+  }
+
+  /* Bottom spacer so content doesn't hide behind mobile nav */
+  .nav-safe {
+    padding-bottom: 5rem;
+  }
+
+  /* Glassmorphism surface */
+  .glass {
+    backdrop-filter: blur(12px) saturate(180%);
+    background: rgba(255,255,255,0.75);
+    border: 1px solid rgba(255,255,255,0.4);
+  }
+}
+
+/* ── Range input global resets ── */
+input[type='range'] {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  cursor: pointer;
+}
+
+input[type='range']:focus {
+  outline: none;
+}
+
+/* Recharts custom overrides */
+.recharts-cartesian-grid-horizontal line,
+.recharts-cartesian-grid-vertical line {
+  stroke: #F3F0FF;
+}
+
+.recharts-tooltip-wrapper {
+  outline: none;
+}
