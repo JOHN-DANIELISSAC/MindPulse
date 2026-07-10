@@ -162,11 +162,11 @@ mindpulse/
 
 | # | Name | Role |
 |---|------|------|
-| 1 | _________________ | Frontend Lead |
-| 2 | _________________ | Backend / Firebase |
-| 3 | _________________ | UI/UX Designer |
-| 4 | _________________ | Feature Development |
-| 5 | _________________ | QA & Documentation |
+| 1 | Dharshini | Frontend Lead |
+| 2 | Joshva Jaspher | Backend / Firebase |
+| 3 | John | UI/UX Designer |
+| 4 | John and Joshva Jaspher | Feature Development |
+| 5 | All  | QA & Documentation |
 
 ---
 
